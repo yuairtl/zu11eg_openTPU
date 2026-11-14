@@ -1,0 +1,67 @@
+# Milianke MLK-CM07 ZU11EG carrier.
+# The DDR architecture follows the existing openTPU two-channel layout. The
+# physical controller is retargeted to two Xilinx DDR4 MIGs with the board's
+# DDR4-2400 devices and pins.
+
+[target]
+name = "mlk-cm07-zu11eg"
+kind = "fpga"
+platform_id = 3
+description = "Milianke MLK-CM07: XCZU11EG-FFVC1760-2-i, 2 x DDR4-2400 MIG, PS host"
+
+[arch]
+S = 1
+D = 128
+MCOLS = 4
+ACT_BLOCKS = 128
+ACT_ROWS = 16
+TMEM_WORDS = 65536
+IMEM_WORDS = 32768
+DRAM_BYTES = 4294967296
+LANES = 8
+PAIR = true
+DSTEP = true
+STREAM = true
+SEQ_WC = true
+
+[uarch]
+MXU_IMPL = 2
+MXU_CL = 16
+MXU_E = 4
+VPU_CL = 2
+ULANES = 8
+TMEM_IMPL = 3
+TMEM_NSB = 2
+TMEM_RPL = true
+TMEM_TDP = true
+TMEM_GST = true
+TMEM_PMP = 1
+TMEM_PMP_STYLE = "ultra"
+RPB = 0
+WPB = 1
+WIN = 16
+FIFO_DEPTH = 1024
+TRACE_DEPTH = 16384
+PQ_WIN = 1024
+CHASH = true
+
+[tech]
+family = "xilinxus"
+part = "xczu11eg-ffvc1760-2-i"
+vendor = "xilinx"
+
+[platform]
+board = "mlk-cm07-zu11eg"
+core_mhz = 100.0
+mem = "ddr4"
+mem_mts = 2400
+mem_ctrl = "mig"
+hostcal = false
+channels_per_slice = 2
+channel_bytes = 2147483648
+channel_phys_bytes = 4294967296
+beat_bytes = 64
+host = "zynqmp"
+pl_ui_mhz = 300
+host_interface = "ps-axi-dma"
+
