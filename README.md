@@ -8,4 +8,6 @@ This repository groups the ZU11EG project by development environment:
 
 The Vivado source snapshot intentionally excludes generated implementation output such as bitstreams, routed checkpoints, run caches, and logs. See `zu11eg_openTPU_vivado/BUILD.md` for the project layout and build instructions.
 
-The source files do not include a repository-wide license declaration. Review file headers and upstream terms before redistributing third-party components.
+## License
+
+Project-authored files are licensed under Apache-2.0; see LICENSE. Third-party notices and vendor IP terms are described in THIRD_PARTY.md.
